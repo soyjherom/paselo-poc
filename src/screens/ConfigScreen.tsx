@@ -29,7 +29,6 @@ const ConfigScreen: React.FC = () => {
   const [userId, setUserId] = useState<string>('');
   const [selectedBank, setSelectedBank] = useState<string>('2627'); // BNCR por default
 
-  // Al montar, restauramos la configuración desde AsyncStorage (si existe)
   useEffect(() => {
     (async () => {
       try {
@@ -47,7 +46,6 @@ const ConfigScreen: React.FC = () => {
     })();
   }, []);
 
-  // Guardamos la configuración en AsyncStorage
   const handleSave = async () => {
     try {
       const newConfig = {
@@ -63,7 +61,6 @@ const ConfigScreen: React.FC = () => {
     }
   };
 
-  // Renderizamos un "radio button" manual para cada opción
   const renderOption = (option: string) => {
     const isSelected = option === selectedScreen;
     return (
@@ -103,7 +100,6 @@ const ConfigScreen: React.FC = () => {
           placeholder="Ingresa tu ID..."
         />
 
-        {/* Opciones con radio buttons */}
         <Text style={{ marginTop: 15 }}>Pantalla inicial preferida:</Text>
         <View style={styles.radioGroup}>
           {SCREEN_OPTIONS.map((screen) => renderOption(screen))}
@@ -142,7 +138,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   contentContainer: {
-    flexGrow: 1,            // Permite "estirar" el contenido
+    flexGrow: 1,            
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 20,

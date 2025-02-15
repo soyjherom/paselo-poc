@@ -1,4 +1,4 @@
-// App.tsx
+
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -97,7 +97,6 @@ export default function App(): JSX.Element {
         <Tab.Screen
           name="Ajustes"
           component={ConfigScreen}
-          // Si no quieres que aparezca la palabra 'Configuracion', puedes cambiar:
           options={{ title: 'Ajustes' }}
         />
       </Tab.Navigator>
